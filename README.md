@@ -53,9 +53,9 @@ DAO가 MySQL에 SQL 실행 → DTO 객체 반환
 View -> 결과 표시  
 
 ## 주요 기능 
-Player / Game / Ranking CRUD 기능
-플레이어별 기록 조회 및 수정
-전체 조회 및 검색 기능
+Player / Game / Ranking CRUD 기능  
+플레이어별 기록 조회 및 수정  
+전체 조회 및 검색 기능  
 랭킹 Top10 조회  
 DB 제약조건(FK, CASCADE) 활용  
 DAO/Service 분리로 객체지향적 설계  
