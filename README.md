@@ -41,7 +41,7 @@ CREATE TABLE game_rankings (
 ## ERD & 프로젝트 구조
 
 <p align="center">
-  <img width="454" height="500" alt="ERD" src="https://github.com/user-attachments/assets/22b8bfc3-d59c-4974-a3a8-08d96ecd3659" />
+  <img width="454" height="500" alt="ERD" src="https://github.com/user-attachments/assets/2e29c3f2-c782-4641-a7f5-0112779767cd" />
   <img width="454" height="500" alt="프로젝트 구조" src="https://github.com/user-attachments/assets/6b1ffc1d-7e95-4f1f-b1d4-784329fa8781" />
 </p>  
 
