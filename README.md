@@ -90,13 +90,13 @@ CREATE INDEX idx_score ON game_rankings(score);
 ## 실행 화면  
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/707659d4-0ba0-4592-a2f1-2ef95bba5f52" width="45%" />
-  <img src="https://github.com/user-attachments/assets/2125612e-6a85-4ba7-b375-b930536e6603" width="45%" />
+  <img width="454" height="500" alt="image" src="https://github.com/user-attachments/assets/b013c781-7b57-4350-b3df-12dbd01d5fef" />
+  <img width="454" height="500" alt="image" src="https://github.com/user-attachments/assets/0a8187c7-10b7-4d76-bfff-4edc1ea1f479" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/42a4b992-b071-4525-b3d2-2553b6efff86" width="45%" />
-  <img src="https://github.com/user-attachments/assets/2ce8da8e-8c2f-4f1f-bfec-d660496211e9" width="45%" />
+  <img width="454" height="500" alt="image" src="https://github.com/user-attachments/assets/cecb8d2e-299e-4a0e-8f09-2843e1f7543e" />
+  <img width="454" height="500" alt="image" src="https://github.com/user-attachments/assets/caabcd2e-1cfd-448d-a565-8828d47eb676" />
 </p>
 
 
