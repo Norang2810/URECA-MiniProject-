@@ -50,7 +50,8 @@ CREATE TABLE game_rankings (
 
 <p align="center">
   <img width="454" height="500" alt="image" src="https://github.com/user-attachments/assets/96ac4fef-e1d8-4004-9360-e869b674c751" />
-  <img width="454" height="500" alt="프로젝트 구조" src="https://github.com/user-attachments/assets/6b1ffc1d-7e95-4f1f-b1d4-784329fa8781" />
+  <img width="454" height="500" alt="image" src="https://github.com/user-attachments/assets/cc511490-1c1f-4038-9eeb-0b442a1ff2eb" />
+
 </p>  
 
 ## 데이터 흐름  
