@@ -69,23 +69,6 @@ FK + CASCADE를 통한 DB 무결성 유지
 DAO / Service 분리로 객체지향적 구조  
 DBManager.java 싱글톤 패턴 적용   
 
-## 인덱스 기반 쿼리 최적화 
-1000건의 데이터 -> 100만건 데이터 
-=> EXPALAIN 결과를 확인해보고
-
-<img width="454" height="151" alt="image" src="https://github.com/user-attachments/assets/294857ae-1a21-4667-a00d-eb7924456741" />
-
-
-```sql
-CREATE INDEX idx_score ON game_rankings(score);
-```
-
-<img width="1696" height="216" alt="image" src="https://github.com/user-attachments/assets/4c9eb3fe-a405-437c-beca-8dc6f864703b" />  
-
-인덱스 추가 → type= ALL -> range scan 으로 바뀌고, rows **998700 ->189106**  수치 확 줄어듦 → 성능 체감
-
-<img width="1681" height="471" alt="image" src="https://github.com/user-attachments/assets/a0866f07-282b-4bf9-87dd-c37132b073b7" />
-
 
 ## 실행 화면  
 
@@ -102,6 +85,23 @@ CREATE INDEX idx_score ON game_rankings(score);
 
 ## Game20 인 게임 -> 랭킹 TOP10 조회
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/682038d4-5a09-4173-9213-e80067715fa7" />  
+
+## 인덱스 기반 쿼리 최적화 
+1000건의 데이터 -> 100만건 데이터 
+=> EXPALAIN 결과를 확인해보고
+
+<img width="454" height="151" alt="image" src="https://github.com/user-attachments/assets/294857ae-1a21-4667-a00d-eb7924456741" />
+
+
+```sql
+CREATE INDEX idx_score ON game_rankings(score);
+```
+
+<img width="1696" height="216" alt="image" src="https://github.com/user-attachments/assets/4c9eb3fe-a405-437c-beca-8dc6f864703b" />  
+
+인덱스 추가 → type= ALL -> range scan 으로 바뀌고, rows **998700 ->189106**  수치 확 줄어듦 → 성능 체감
+
+<img width="1681" height="471" alt="image" src="https://github.com/user-attachments/assets/a0866f07-282b-4bf9-87dd-c37132b073b7" />
 
 ## 프로젝트 요약
 | 항목           | 기술                                 |
