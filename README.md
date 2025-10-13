@@ -1,41 +1,49 @@
 # 유레카에서 진행한 개인 미니프로젝트
 
-### 랭킹관리 시스템 JDBC + SWING 사용해서 CRUD 구현  
+### 랭킹 관리 시스템 — JDBC + Swing 기반 CRUD 구현  
 
+---
 
 ## 테이블 생성 SQL문  
-  ```sql
+
+```sql
 CREATE TABLE players (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
+    player_id INT AUTO_INCREMENT PRIMARY KEY,
+    player_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
-CREATE TABLE games (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
-    genre VARCHAR(50),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE genres (
+    genre_id INT AUTO_INCREMENT PRIMARY KEY,
+    genre_name VARCHAR(50) UNIQUE NOT NULL
 );
 
+CREATE TABLE games (
+    game_id INT AUTO_INCREMENT PRIMARY KEY,
+    game_title VARCHAR(100) NOT NULL,
+    genre_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_game_genre FOREIGN KEY (genre_id)
+        REFERENCES genres(genre_id)
+        ON DELETE SET NULL
+);
 
 CREATE TABLE game_rankings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     player_id INT NOT NULL,
     game_id INT NOT NULL,
     score INT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-
-    -- FK 제약조건
-    ADD CONSTRAINT fk_ranking_player FOREIGN KEY (player_id)
-    REFERENCES players(player_id) ON DELETE CASCADE;
-
-    ADD CONSTRAINT fk_ranking_game FOREIGN KEY (game_id)
-    REFERENCES games(game_id) ON DELETE CASCADE;
-
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_ranking_player FOREIGN KEY (player_id)
+        REFERENCES players(player_id)
+        ON DELETE CASCADE,
+    CONSTRAINT fk_ranking_game FOREIGN KEY (game_id)
+        REFERENCES games(game_id)
+        ON DELETE CASCADE,
+    CONSTRAINT unique_player_game UNIQUE (player_id, game_id)
 );
+
 ```
 
 ## ERD & 프로젝트 구조
@@ -93,4 +101,15 @@ CREATE INDEX idx_score ON game_rankings(score);
 
 
 ## Game20 인 게임 -> 랭킹 TOP10 조회
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/682038d4-5a09-4173-9213-e80067715fa7" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/682038d4-5a09-4173-9213-e80067715fa7" />  
+
+## 프로젝트 요약
+| 항목           | 기술                                 |
+| :----------- | :--------------------------------- |
+| **DB**       | MySQL (정규화, FK, UNIQUE, INDEX)     |
+| **Backend**  | Java (JDBC, DAO/DTO/Service 계층 분리) |
+| **Frontend** | Java Swing (테이블, 버튼 이벤트 기반)        |
+| **디자인 패턴**   | Singleton (DBManager)              |
+| **최적화 포인트**  | 인덱스, 복합 UNIQUE, FK Cascade         |
+| **ERD 완성도**  | 3NF (Third Normal Form) 수준 정규화     |
+
