@@ -1,4 +1,4 @@
-# 유레카에서 진행한 개인 미니프로젝트
+# 유레카에서 진행한 첫번째 개인 미니프로젝트
 
 ### 랭킹 관리 시스템 — JDBC + Swing 기반 CRUD 구현  
 
@@ -49,7 +49,7 @@ CREATE TABLE game_rankings (
 ## ERD & 프로젝트 구조
 
 <p align="center">
-  <img width="454" height="500" alt="ERD" src="https://github.com/user-attachments/assets/2e29c3f2-c782-4641-a7f5-0112779767cd" />
+  <img width="454" height="500" alt="image" src="https://github.com/user-attachments/assets/96ac4fef-e1d8-4004-9360-e869b674c751" />
   <img width="454" height="500" alt="프로젝트 구조" src="https://github.com/user-attachments/assets/6b1ffc1d-7e95-4f1f-b1d4-784329fa8781" />
 </p>  
 
@@ -65,9 +65,9 @@ Player / Game / Ranking CRUD 기능
 플레이어별 기록 조회 및 수정  
 전체 조회 및 검색 기능  
 랭킹 Top10 조회  
-DB 제약조건(FK, CASCADE) 활용  
-DAO/Service 분리로 객체지향적 설계  
-싱글톤 패턴 적용 (DBManager.java)  
+FK + CASCADE를 통한 DB 무결성 유지  
+DAO / Service 분리로 객체지향적 구조  
+DBManager.java 싱글톤 패턴 적용   
 
 ## 인덱스 기반 쿼리 최적화 
 1000건의 데이터 -> 100만건 데이터 
